@@ -8,12 +8,3 @@ function mostrarIframe() { //Aqui o Iframe aparece e o formulário desaparece
     document.getElementById("iframe").style.display = "block";
 
 }
-
-function botaoMenu(){
-  let menu = document.getElementById("menuConteudo");
-  if(menu.style.display === "block"){
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
-}
