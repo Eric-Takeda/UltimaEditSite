@@ -1,0 +1,243 @@
+html, body { /*Modifica o HTML e o Body do "index.html"*/
+    margin: 0; /*Define a margem de todos os lados de um elemento*/
+    padding: 0; /*Cria um espaçamento interno entre o conteúdo e suas bordas*/
+    width: 100%; /*Largura em porcentagem*/
+    height: 170vh; /*Altura da viewport, ou seja, ocupa toda a área visível do navegador*/
+    display: flex; /*Define o container como flexível*/
+    flex-direction: row; /*Define a direção dos itens dentro do recipiente, horizontalmente, da esquerda para a direita*/
+    justify-content: center; /*Centraliza os itens no eixo principal horizontalmente*/
+    align-items: center; /*Centraliza verticalmente ao centro*/
+    background: linear-gradient(135deg, #0f4bbd, #0a2a6f, #040a20); /*Cria um degradê linear, na direção diagonal*/
+
+}
+
+td:last-child {  /*Td que recebe o conteúdo, no caso, apenas na última td*/
+    position: relative; /*O conteúdo deve ser posicionar na última td, e não na tela inteira, ou, em outro lugar*/
+
+}
+
+.ImgEfeito { /*Pega a class da logo*/
+  width: 300px; /*Largura*/
+  height: auto; /*Ajuste automático, mantendo a proporção*/
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.9)); /*Cria um efeito de sombra branca*/
+}
+
+.psBotao { /*Botão do Playstation*/
+  width: 72px;
+  height: 72px;
+  background: radial-gradient(circle at top, #1e6bff, #003791); /*Fundo do botão*/
+  border-radius: 50%; /*Arredondamento da borda*/
+  border: none; /*Borda*/
+  cursor: pointer;
+}
+
+.psBotao img { /*Imagem*/
+  width: 34px;
+}
+
+.entrada { /*Animação de entrada*/
+  animation:
+    entrada 1.2s ease-out forwards, /*Aparece e cresce*/
+    brilho 2.5s infinite alternate; /*Brilho ao redor*/
+}
+
+@keyframes brilho {/*Efeito Azul*/
+  0% {
+    box-shadow:
+      0 0 10px rgba(0, 120, 255, 0.4),
+      0 0 20px rgba(0, 120, 255, 0.3);
+  }
+  100% {
+    box-shadow:
+      0 0 20px rgba(0, 160, 255, 0.9),
+      0 0 40px rgba(0, 160, 255, 0.7);
+  }
+}
+
+
+@keyframes entrada {
+  0% { /*Começa nulo*/
+    opacity: 0;
+    transform: scale(0.6);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  60% { /*Cresce com brilho forte*/
+    opacity: 1;
+    transform: scale(1.15); /*Tamanho que cresce*/
+    box-shadow:
+      0 0 40px rgba(0, 170, 255, 1);
+  }
+  100% { /*Volta ao tamanho normal*/
+    transform: scale(1);
+  }
+}
+
+.video{ /*Video*/
+    border-radius: 10px;
+}
+
+#formulario { /*Chama o formulário pelo ID*/
+    display: none; /*Faz o elemento sumir*/
+    width: 320px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.06); /*Cor do background*/
+    border: 1px solid(255, 255, 255, 0.15);
+    border-radius: 25px; /*Arredondas os cantos de um elemento*/
+    box-shadow: 0 0 40px rgba(0, 114, 255, 0.35); /*Cria um sombreado ao redor do elemento*/
+    position: absolute; /*Faz o Td de referência e fica alinhado ao centro da célula e não fica preso a tela inteira*/
+    top: 50%; /*Começa no meio vertical*/
+    left: 50%; /*Começa no meio horizontal*/
+    transform: translate(-50%, -50%); /*Centraliza exatamente no centro*/
+    backdrop-filter: blur(8px); /*Filtro borrado que fica atrás do elemento*/
+}
+
+
+
+#formulario h3 { /*Chama o título do formulário*/
+    text-align: center; /*Alinha o conteúdo de texto no centro*/
+    margin-bottom: 20px; /*Margem inferior do elemento*/
+    color: white; /*Cor*/
+    letter-spacing: 2px; /*Espaçamento entre as letras*/
+}
+
+#formulario label{
+  color: white;
+  filter: drop-shadow(0 0 12px rgba(0, 114, 255, 0.5)); /*Brilho azul ao redor do Label*/
+}
+
+#formulario input { /*Chama o campo de dados*/
+    width: 90%;
+    padding: 12px;
+    margin-top: 5px; /*Margem superior do elemento*/
+    border-radius: 5px;
+    border: 1px solid #ccc; /*Borda em linha contínua*/
+}
+
+#formulario input:focus { /*Quando o input está selecionado*/
+  outline: none; /*Remove o contorno padrão*/
+  border-color: #0a66c2; /*Adiciona o azul*/
+  box-shadow: 0 0 12px rgba(0, 114, 255, 0.5);
+}
+
+
+#formulario button { /*Chama o botão de enviar*/
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; /*Muda o cursor para o clicável*/
+    font-size: 15px; /*Define o tamanho do texto*/
+}
+
+#formulario button:hover { /*Chama o botão do formulário, quando passa o cursor em cima dele*/
+    background-color: #104e8b;
+}
+
+
+
+#iframe{ /*Chama o Iframe pelo Id*/
+    display: block; /*Ocupa toda a largura e quebra a linha*/
+    border-radius: 10px;
+    border: none;
+}
+
+/*Botões*/
+.botao{ /*Chama as classes que contém botão*/
+    padding:22px 60px; /*Define o espaço interno do botão*/
+    border-radius: 12px; /*Arredonda as bordas*/
+    border: none; /*Remove a borda padrão*/
+    cursor: pointer; /*Muda o cursor do mouse*/
+    position: relative; /*Permite posicionar os elementos before e after no botão*/
+    overflow: hidden; /*Esconde tudo o que passar os limites do botão*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /*Transição não instantânea, com aumento da sombra,
+    durante 0,3 segundos e começa rápido e termina devagar = ease* /
+    display: flex; /*Alinha o conteúdo em linha*/
+    align-items: center; /*Centraliza verticalmente*/
+}
+
+/* brilho */
+.botao::after { /*Cria um camada extra depois do conteúdo do botão*/
+  content: ""; /*Necessário para criar o pseudo-elemento*/
+  position: absolute; /*Posiciona essa camada dentro do botão*/
+  width: 60%; /*Tamanho do brilho*/
+  height: 100%; /*Tamanho do brilho*/
+  top: 0; /*Garante que a camada de brilho comece no topo do botão*/
+  left: -60%; /*Inicia fora do botão, à esquerda*/
+  background: rgba(255, 255, 255, 0.25);
+  transform: skewX(-20deg); /*Deixa o brilho inclinado*/
+  transition: all 0.5s ease; /*Faz o movimento ficar suave*/
+}
+
+.botao:hover::after { /*Depois que passar por cima*/
+  left: 110%; /*Faz o brilho atravessar o botão*/
+}
+
+/* Logo */
+.logo { /*Chama as classes que contém logo*/
+  width: 28px; /*Define a largura*/
+  height: auto; /*Mantém a proporção na imagem*/
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)); /*Adiciona sombra na logo*/
+}
+
+/*Plurall*/
+.plurall {
+  background: linear-gradient(135deg, #4b2bd6, #2b86ff); /*Fundo com degradê*/
+  box-shadow: 0 8px 20px rgba(75, 43, 214, 0.35); /*Sombra do botão*/
+}
+
+
+.plurall:hover {
+  transform: translateY(-3px); /*Efeito de flutuar*/
+  box-shadow: 0 12px 30px rgba(75, 43, 214, 0.5); /*Sombra maior e mais forte*/
+}
+
+/*Colégio Progresso*/
+.progresso {
+  background: linear-gradient(135deg, #0b3c6f, #ff7a00);
+  box-shadow: 0 8px 20px rgba(11, 60, 111, 0.35);
+}
+
+.progresso:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(11, 60, 111, 0.5);
+}
+
+/*Playstation*/
+.console{
+    background: linear-gradient(135deg, #360d8e, #5a69ad);
+    box-shadow: 0 8px 20px rgba(23, 42, 106, 0.45);
+}
+
+.console:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(115, 106, 193, 0.6);
+}
+
+/*Phil Collins*/
+.collins{
+    background: linear-gradient(135deg, #1a2a47, #4b5c86);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.collins:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.cadastro {
+  background: linear-gradient(45deg, #0A66C2, #004182);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.4);
+  padding: 22px 30px;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+.cadastro:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(10, 102, 194, 0.6);
+}
+

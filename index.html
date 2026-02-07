@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!--Informar que está em HTML5-->
+<html lang="en"> <!--Especifica o idioma-->
+<head> <!--Cabeçalho, que contém informações gerais sobre o documento-->
+    <meta charset="UTF-8"> <!--Codificação de caracteres do documento-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Exibição em diferentes dispositivos-->
+    <title>Primeira Atividade</title> <!--Título do documento-->
+    <link rel="stylesheet" href="style.css"> <!--CSS-->
+</head>
+
+
+<body> <!--O "corpo" do documento, que contém as informações vísiveis-->
+        <table width="100%"> <!--Adiciona a tabela, e o width sua largura-->
+  <tr> <!--Define uma linha na tabela, podendo conter um ou mais elemento-->
+    <th width="20%"> <!--Adiciona um célula de cabeçalho-->
+        <img src="LogoEditada.png" class="ImgEfeito"> <!--Coloca uma imagem da pasta, junto com a class-->
+        <a href="https://profile.playstation.com/eric_monster_147" target="abc"> <!--Target define onde abrirão os links-->
+          <button class="psBotao entrada" type="button" onclick="mostrarIframe()">
+            <img src="PlayStation-Logo.png">
+          </button>
+        </a>
+    </th>
+   
+    <td valign="middle" height="200"> <!--Td Align alinha o conteúdo no centro,valign alinha verticalmente na célula -->
+      <video width="1200" height="650" controls autoplay loop muted class="video"> <!--Define o tamanho do vídeo, controls permite interagir com o vídeo.
+        Autoplay, inicia-se sozinho, loop reinicia e muted silencia. -->
+        <source src="jogar.mp4" type="video/mp4"> <!--Insere o vídeo e o seu formato.-->
+      </video>
+    </td>
+  </tr>
+  
+  
+  <tr height="500">
+    <td> <!--Célula de dados inserido dentro de uma "tr", linha-->
+        <a href="https://www.plurall.net/" target="abc"> <!--Insere o destino de um link e onde abrir o documento-->
+          <button class="botao plurall" type="button" onclick="mostrarIframe()">
+            <img src="transferir.png" alt="Plurall" class="logo"> <!--Class da imagem + a imagem, que estará dentro do botão-->
+          </button> <!--Insere um botão, com um class para estelizar eles, type para dizer que é um botão.
+          e o onClick permite executar o código Javascript ao ser clicado-->
+        </a>
+        <br><br> <!--Insere uma quebra de linha-->
+        <a href="https://www.colegioprogresso.g12.br/" target="abc">
+           <button class="botao progresso" type="button" onclick="mostrarIframe()">
+            <img src="progresso.avif" alt="Colégio Progresso" class="logo">
+           </button>
+        </a>
+        <br><br>
+        <a href="https://pt.wikipedia.org/wiki/PlayStation" target="abc">
+           <button class="botao console" type="button" onclick="mostrarIframe()">
+            <img src="console.png" alt="B2-Spirit" class="logo">
+           </button>
+        </a>
+        <br><br>
+        <a href="https://pt.wikipedia.org/wiki/Phil_Collins" target="abc">
+           <button class="botao collins" type="button" onclick="mostrarIframe()">
+            <img src="collins.webp" alt="Phil Collins" class="logo">
+           </button>
+        </a>
+        <br><br>
+        <button class="botao cadastro" onclick="mostrarFormulario()">👤 Cadastre-se</button>
+        </td>
+
+
+    <td>
+  <form action="https://api.sheetmonkey.io/form/75uVYLu9tKbyujn6gxykeN" method="post" id="formulario"> <!--Insere o formulário e o action indica para onde os dados irão, 
+    "method=Post" envia os dados no corpo da requisição HTTP, não na URL igual o "Get", e o ID é o identificador para utilizá-lo com o Javascript e CSS.-->
+    
+    <h3>Formulário de Cadastro</h3> <!--Exibe um título de terceiro nível na página, é em negrito, porém, com tamanho de fonte menor.-->
+
+    <label>Nome Completo:</label> <!--Fornece uma legenda no rótulo-->
+    <input type="text" required name="Nome"> <!--Suporta dados de textos, "required" indica que os campos devem ser preenchidos antes do envio,
+    "Name" é a chave do elemento, que no caso, aparece listada no Sheets-->
+
+    <label>Data de Nascimento:</label>
+    <input type="date" required name="DataDeNascimento"> <!--Campo que permite selecionar a data-->
+
+    <label>Nome de Usuário</label>
+    <input type="text" required name="Username">
+    
+    <button type="submit">Enviar</button> <!--Define o botão que envia todos os dados do formulário-->
+</form>
+
+  <iframe name="abc" width="100%" height="700" id="iframe"></iframe> <!--"Iframe" incorpora outros conteúdos de outras páginas web para uma HTML-->
+</td>
+  </tr> <!--Fechamentos-->
+</table> 
+<script src="script.js"></script> <!--Javascript-->
+</body>
+</html>
