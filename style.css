@@ -272,7 +272,7 @@ td:last-child {  /*Td que recebe o conteúdo, no caso, apenas na última td*/
 
   .ImgEfeito {
     width: 220px;
-    display:flex;
+    display:block;
     text-align: center;
   }
 
@@ -301,6 +301,7 @@ td:last-child {  /*Td que recebe o conteúdo, no caso, apenas na última td*/
     width: 95%;
   }
 }
+
 
 
 
